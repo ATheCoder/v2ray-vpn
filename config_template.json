@@ -1,0 +1,76 @@
+{
+    "routing" : {
+      "name" : "all_to_main",
+      "domainStrategy" : "AsIs",
+      "rules" : [
+        {
+          "type" : "field",
+          "outboundTag" : "Main",
+          "port" : "0-65535"
+        }
+      ]
+    },
+    "inbounds" : [
+      {
+        "listen" : "127.0.0.1",
+        "protocol" : "socks",
+        "settings" : {
+          "ip" : "127.0.0.1",
+          "auth" : "noauth",
+          "udp" : true
+        },
+        "tag" : "socksinbound",
+        "port" : 1081
+      },
+      {
+        "listen" : "127.0.0.1",
+        "protocol" : "http",
+        "settings" : {
+          "timeout" : 0
+        },
+        "tag" : "httpinbound",
+        "port" : 8001
+      }
+    ],
+    "dns" : {
+      "servers" : [
+        "localhost"
+      ]
+    },
+    "outbounds" : [
+      {
+        "sendThrough" : "0.0.0.0",
+        "mux" : {
+          "enabled" : false,
+          "concurrency" : 8
+        },
+        "protocol" : "vmess",
+        "settings" : {
+          "vnext" : [
+            {
+              "address" : "{{ variable }}",
+              "users" : [
+                {
+                  "id" : "{{ user_id }}",
+                  "alterId" : 10,
+                  "security" : "aes-128-gcm",
+                  "level" : 0
+                }
+              ],
+              "port" : "{{ port }}"
+            }
+          ]
+        },
+        "tag" : "Main",
+        "streamSettings" : {
+          "tcpSettings" : {
+            "header" : {
+              "type" : "none"
+            }
+          },
+          "security" : "none",
+          "network" : "tcp"
+        }
+      }
+    ]
+  }

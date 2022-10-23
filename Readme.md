@@ -36,7 +36,7 @@ After you run **Tun2Socks** you have to change MacOS's routing table to make sur
 You can do this by running the `scripts/macos/add-routes.sh` script.
 
 ```
-sudo bash ./scripts/macos/add-routes.sh
+sudo bash ./scripts/macos/add-routes.sh ${YOUR_V2RAY_SERVERS_IP}
 ```
 
 *Note that this settings are not persistant and you need to run this script everytime you restart your system*
@@ -46,5 +46,5 @@ sudo bash ./scripts/macos/add-routes.sh
 If you want to change your routing table to what it was before so that you can use your Internet connection without the traffic going through v2ray you can run the `./scripts/macos/del-routes.sh` script.
 
 ```
-sudo bash ./scripts/macos/del-routes.sh
+sudo bash ./scripts/macos/del-routes.sh ${YOUR_V2RAY_SERVERS_IP}
 ```

@@ -1,0 +1,33 @@
+#! /bin/bash
+sudo ifconfig utun123 198.18.0.1 198.18.0.1 up
+sudo route add -net 0.0.0.0/5 198.18.0.1
+sudo route add -net 8.0.0.0/7 198.18.0.1
+sudo route add -net 11.0.0.0/8 198.18.0.1
+sudo route add -net 12.0.0.0/6 198.18.0.1
+sudo route add -net 16.0.0.0/4 198.18.0.1
+sudo route add -net 32.0.0.0/3 198.18.0.1
+sudo route add -net 64.0.0.0/2 198.18.0.1
+sudo route add -net 128.0.0.0/3 198.18.0.1
+sudo route add -net 160.0.0.0/5 198.18.0.1
+sudo route add -net 168.0.0.0/6 198.18.0.1
+sudo route add -net 172.0.0.0/12 198.18.0.1
+sudo route add -net 172.32.0.0/11 198.18.0.1
+sudo route add -net 172.64.0.0/10 198.18.0.1
+sudo route add -net 172.128.0.0/9 198.18.0.1
+sudo route add -net 173.0.0.0/8 198.18.0.1
+sudo route add -net 174.0.0.0/7 198.18.0.1
+sudo route add -net 176.0.0.0/4 198.18.0.1
+sudo route add -net 192.0.0.0/9 198.18.0.1
+sudo route add -net 192.128.0.0/11 198.18.0.1
+sudo route add -net 192.160.0.0/13 198.18.0.1
+sudo route add -net 192.169.0.0/16 198.18.0.1
+sudo route add -net 192.170.0.0/15 198.18.0.1
+sudo route add -net 192.172.0.0/14 198.18.0.1
+sudo route add -net 192.176.0.0/12 198.18.0.1
+sudo route add -net 192.192.0.0/10 198.18.0.1
+sudo route add -net 193.0.0.0/8 198.18.0.1
+sudo route add -net 194.0.0.0/7 198.18.0.1
+sudo route add -net 196.0.0.0/6 198.18.0.1
+sudo route add -net 200.0.0.0/5 198.18.0.1
+sudo route add -net 208.0.0.0/4 198.18.0.1
+sudo route -n add -net 37.32.29.37/32 192.168.1.1

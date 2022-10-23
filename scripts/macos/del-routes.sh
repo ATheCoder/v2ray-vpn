@@ -29,5 +29,5 @@ sudo route delete -net 194.0.0.0/7 198.18.0.1
 sudo route delete -net 196.0.0.0/6 198.18.0.1
 sudo route delete -net 200.0.0.0/5 198.18.0.1
 sudo route delete -net 208.0.0.0/4 198.18.0.1
-sudo route -n delete -net 37.32.29.37/32 192.168.1.1
+sudo route -n delete -net $1 192.168.1.1
 sudo ifconfig utun123 198.18.0.1 198.18.0.1 down
